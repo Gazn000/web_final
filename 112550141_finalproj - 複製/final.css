@@ -1,0 +1,252 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+body{
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    background-color: #111;
+}
+
+* {
+    /*width/height 為border範圍*/
+    box-sizing: border-box;
+}
+
+h1, h3{
+    font-weight: 400;
+}
+
+#travel-app{
+    min-height: 100vh;
+    background-image: url("https://www.shutterstock.com/image-photo/cloudy-sky-over-field-sunflowers-600nw-2370392913.jpg");
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    transition: 500ms;
+    opacity: 1; /*不透明度*/
+}
+
+#travel-app::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+#container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 2em 3em 4em 3em;
+}
+
+#Weather ul{
+    list-style: none;
+}
+
+#Weather li{
+    padding: 5px;
+}
+
+#container > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#city-time, 
+#temp,
+#weather{
+    margin: 0 1em;
+}
+
+#city-time h1{
+    margin: 0;
+    margin-bottom: 0.2em;
+    font-size: 3em;
+}
+
+#temp{
+    font-size: 7em;
+    margin: 0;
+}
+
+#panel{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: rgba(110, 110, 110, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    z-index: 1;
+    overflow-y: auto; /* 添加垂直滾動條 */
+    overflow-x: hidden; /* 禁止水平滾動 */
+    padding-left: 10px; /* 添加內邊距 */
+    padding-right: 40px;
+}
+
+#history{
+    height: 30%;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+#exchange_rate{
+    margin-left: 10%;
+    margin-top: 10%;
+}
+#favorites{
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+
+#favoriteBtn {
+    margin-top: 10px;
+    background: #ccc solid;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+#favorites {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 60%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#favoriteBtn:hover {
+    background-color: white !important; /* 滑鼠懸停時的背景色 */
+    color: black !important; /* 滑鼠懸停時的字體顏色 */
+}
+#exchange{
+    
+    
+    background: #ccc solid;
+    color: #fff;
+    border: none;
+    padding:3px 20px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+#exchange:hover{
+    background-color: white !important; /* 滑鼠懸停時的背景色 */
+    color: black !important; /* 滑鼠懸停時的字體顏色 */
+}
+
+
+#favoritesTable th, #favoritesTable td {
+    border: 1px solid white; /* 修改這裡以添加白色細框線 */
+    padding: 8px;
+    text-align: center; /* 修改這裡以居中對齊 */
+}
+
+#favoritesTable th {
+    
+    color: white;
+}
+#favoritesTable {
+    
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-right: 60%; /* 添加右邊界距 */
+    width: 50%; /* 確保表格寬度減去左右邊界距 */
+    color: white;
+    border-collapse: collapse;
+}
+#locationInput{
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+#submit{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1.5em;
+    margin: 0;
+    border: none;
+    outline: none;
+    background: #ccc solid;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: 0.4s;
+}
+
+#submit:hover{
+    background: #fff !important;
+    color: #000;
+}
+
+#search{
+    
+    background: none;
+    border: none;
+    border-bottom: 1px #ccc solid;
+    padding: 0 1em 0.5em 0;
+    width: 80%;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+#search:focus{
+    outline: none;
+}
+
+#search::placeholder{
+    color: #ccc;
+}
+
+#panel ul{
+    padding: 0 0 1 em 0;
+    margin: 2em 0;
+    /*border-bottom: 1px #ccc solid;*/
+}
+
+#panel ul li{
+    color: #ccc;
+    margin: 2.5em 0;
+}
+
+#cities{
+    display: block;
+    cursor: pointer;
+}
+
+#cities:hover {
+    color: #fff;
+}
+
+#history{
+    display: block;
+    cursor: pointer;
+}
+
+#history:hover{
+    color: #fff;
+}
+
+#cities li::before{
+    display: none;
+}
+
+.hover-white:hover { color: #fff; }

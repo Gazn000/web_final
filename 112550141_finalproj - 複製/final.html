@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final_Project</title>
+    <link rel="stylesheet" type="text/css" href="final.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="travel-app">
+        <div id="container">
+            <h3 id="brand">the travel</h3>
+            <div>
+                <h1 id="temp">16</h1>
+                <h1>&#176;C</h1><!-- &#176; = 度的符號-->
+                <div id="city-time">
+                    <h1 id="name">Taipei</h1>
+                    <small>
+                        <span id="time">8p.m.</span>
+                        -
+                        <span id="date">Monday Jun 17</span>
+                    </small>
+                </div>
+                <div id="Weather">
+                    <ul>
+                        <li><span id="condition">cloudy</span></li>
+                        <li>Cloudy <span id="cloud">89</span>%</li>
+                        <li>Humidity <span id="humidity">64</span>%</li>
+                        <li>
+                            <img src="https://cdn.weatherapi.com/weather/64x64/day/116.png" id="icon">
+                            <span id="maxtemp">25</span>&#176;C / <span id="mintemp">18</span>&#176;C
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="panel">
+            <form id="locationInput">
+                <input type="text" id="search" placeholder="Search Location...">
+                <button type="submit" id="submit" onclick="fetchWeatherData()">
+                    <i class="material-icons">search</i>
+                </button>
+            </form>
+            <div id="history">
+                <ul id="cities">
+                </ul>
+            </div>
+            <div id="exchange_rate">
+                <h4>Currency Exchange Rate</h4>
+                <p><span id="country">country</span> (<span id="currencyCode">currencyCode</span>) to TWD: <span id="exchangeRate">exchangeRate</span></p>
+                <div>
+                    <input type="text" id="TWDvalue" placeholder="TWDvalue">
+                    <button type="submit" id="exchange" onclick="getExchangedValue">Exchange</button>
+                    <hr>
+                    <div id="show">
+                        <span id="TWD">TWDvalue</span> TWD = <span id="ExchangedValue">ExchangedValue</span> <span id="currency"> currencyCode</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="final.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final_Project</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+    </style>
+
+</head>
+
+<body>
+    <div id="travel-app">
+        <div id="container">
+            <h3 id="brand">the travel</h3>
+            <div>
+                <h1 id="temp">16</h1>
+                <h1>&#176;C</h1><!-- &#176; = 度的符號-->
+                <div id="city-time">
+                    <h1 id="name">Taipei</h1>
+                    <small>
+                        <span id="time">20:04</span>
+                        -
+                        <span id="date">Monday Jun 17</span>
+                    </small>
+                </div>
+                <div id="Weather">
+                    <ul>
+                        <li><span id="condition">cloudy</span></li>
+                        <li>Cloudy <span id="cloud">89</span>%</li>
+                        <li>Humidity <span id="humidity">64</span>%</li>
+                        <li>
+                            <img src="https://cdn.weatherapi.com/weather/64x64/day/116.png" id="icon">
+                            <span id="maxtemp">25</span>&#176;C / <span id="mintemp">18</span>&#176;C
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="panel">
+            <form id="locationInput">
+                <input type="text" id="search" placeholder="Search Location...">
+                <button type="submit" id="submit" onclick="fetchWeatherData()">
+                    <i class="material-icons">search</i>
+                </button>
+            </form>
+            <div id="history">
+                <ul id="cities">
+                    <li id="city">New York</li>
+                    <li id="city">California</li>
+                    <li id="city">Paris</li>
+                    <li id="city">Tokyo</li>
+                </ul>
+            </div>
+            <div id="exchange_rate">
+                <h4>Currency Exchange Rate</h4>
+                
+            </div>
+        </div>
+    </div>
+    <script src="data.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Exchange Rates</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Currency Exchange Rates</h1>
+        <label for="country">Enter Country:</label>
+        <input type="text" v-model="country" @keyup.enter="getExchangeRate">
+        <button @click="getExchangeRate">Get Exchange Rate</button>
+        <div v-if="exchangeRate !== null">
+            <p>Exchange rate for {{ country }} ({{ currencyCode }}) to TWD: {{ exchangeRate }}</p>
+        </div>
+        <div v-if="errorMessage">
+            <p>Error: {{ errorMessage }}</p>
+        </div>
+        <div v-show="isInputLegalCountry">
+            <input type="text" v-model="TWDvalue" @keyup.enter="getExchangedValue">
+            <button @click="getExchangedValue">Exchange</button>
+            <p v-if="ExchangedValue !== null">{{TWDvalue}} TWD = {{ExchangedValue}} {{ currencyCode }}</p>
+        </div>
+        <div>
+            <h2>Search History</h2>
+            <button v-for="(search, index) in searchHistory" :key="index" @click="searchAgain(search)">
+                {{ search }}
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
